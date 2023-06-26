@@ -12,7 +12,16 @@ class HomeScreen extends StatelessWidget {
           bottom: false,
           child: Container( // 컨테이너, 말 그대로, 위젯들을 넣는 역할을 해요.. 형태는 child widget를 따라감
             color: Colors.black,
-            child: Column(
+            // child: Column(
+            child: Row(
+              // MainAxisAlignment - 주축 정렬
+              // start - 시작
+              // end - 끝
+              // center - 가운데
+              // spaceBetween - 위젯과 위젯 사이 공간이 동일하게 배치
+              // spaceEvenly - spaceBetween과 같이 위젯을 같은 간격으로 배치하지만, 끝과 끝이, 여백으로 시작(위젯이 아니라)
+              // spaceAround - spaceEvenly + 끝과 끝의 간격은 1/2
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Container(
                   color: Colors.red,
