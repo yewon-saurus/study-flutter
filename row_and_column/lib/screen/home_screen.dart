@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
           bottom: false,
           child: Container( // 컨테이너, 말 그대로, 위젯들을 넣는 역할을 해요.. 형태는 child widget를 따라감
             color: Colors.black,
-            width: MediaQuery.of(context).size.width, // 이걸 이렇게 하면 size를 가져올 수 있구나~ 거기서 width나 heigth를 가져올 수 있구나~
+            // width: MediaQuery.of(context).size.width, // 이걸 이렇게 하면 size를 가져올 수 있구나~ 거기서 width나 heigth를 가져올 수 있구나~
             // child: Column(
             child: Column(
               // MainAxisAlignment - 주축 정렬
@@ -31,7 +31,9 @@ class HomeScreen extends StatelessWidget {
 
               // baseline은 글자를 정렬할 때, 글자의 밑부분을 정렬하는건데.. (알아서 사용 하시고)
               // crossAxisAlignment: CrossAxisAlignment.center, // 기본값 인듯
-              crossAxisAlignment: CrossAxisAlignment.stretch, // 좍좍 늘림.. 헐! 50씩만 차지하라고 했는데 최대한으로 늘어남
+              crossAxisAlignment: CrossAxisAlignment.start, // 좍좍 늘림.. 헐! 50씩만 차지하라고 했는데 최대한으로 늘어남
+
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
                   color: Colors.red,
