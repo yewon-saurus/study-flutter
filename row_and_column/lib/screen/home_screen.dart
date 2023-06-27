@@ -35,20 +35,28 @@ class HomeScreen extends StatelessWidget {
 
               mainAxisSize: MainAxisSize.min,
               children: [
-                Container(
-                  color: Colors.red,
-                  width: 50.0,
-                  height: 50.0,
+                // Expanded / Flexible -> 중요.. Row나 Column 위젯의 안, 'children'에만 사용될 수 있어요
+                Expanded( // 헐.. 남아있는 공간을, Expanded로 감싸져있는 애들이, 나눠서 먹었네요..
+                  child: Container(
+                    color: Colors.red,
+                    width: 50.0,
+                    height: 50.0,
+                  ),
                 ),
-                Container(
-                  color: Colors.orange,
-                  width: 50.0,
-                  height: 50.0,
+                Expanded(
+                  flex: 2, // 나머지 공간을 나눠먹는 비율.. 얘는 2 만큼의 공간을 차지하겠군
+                  child: Container(
+                    color: Colors.orange,
+                    width: 50.0,
+                    height: 50.0,
+                  ),
                 ),
-                Container(
-                  color: Colors.yellow,
-                  width: 50.0,
-                  height: 50.0,
+                Flexible( // 일단은 이 비율만큼 공간을 차지 하되, 만약 child 안에 있는 위젯이 공간을 차지하지 않으면 -> 남는 공간은 버려 버림
+                  child: Container(
+                    color: Colors.yellow,
+                    width: 50.0,
+                    height: 50.0,
+                  ),
                 ),
                 Container(
                   color: Colors.green,
