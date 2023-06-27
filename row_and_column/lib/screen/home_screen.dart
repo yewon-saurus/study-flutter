@@ -13,55 +13,69 @@ class HomeScreen extends StatelessWidget {
           child: Container( // 컨테이너, 말 그대로, 위젯들을 넣는 역할을 해요.. 형태는 child widget를 따라감
             color: Colors.black,
             // width: MediaQuery.of(context).size.width, // 이걸 이렇게 하면 size를 가져올 수 있구나~ 거기서 width나 heigth를 가져올 수 있구나~
-            // child: Column(
+            // Row와 Column을 조합해서 복잡한 레이아웃을 만들 수 있다!.. 부모 자식 부모 자식 이렇게 겹쳐서요
             child: Column(
-              // MainAxisAlignment - 주축 정렬
-              // start - 시작
-              // end - 끝
-              // center - 가운데
-              // spaceBetween - 위젯과 위젯 사이 공간이 동일하게 배치
-              // spaceEvenly - spaceBetween과 같이 위젯을 같은 간격으로 배치하지만, 끝과 끝이, 여백으로 시작(위젯이 아니라)
-              // spaceAround - spaceEvenly + 끝과 끝의 간격은 1/2
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-
-              // CrossAxisAligment - 반대축 정렬
-              // row 일 때는 세로, column 일 때는 가로~ 반대로 생각하면 편하겠죠?
-              // 주축에서는, 남는 공간을, 차지 할 수 있는 최대한을 차지한다?
-              // 근데 주축이 아닌.. 반대 축은, 위젯의 사이즈, 즉 최소한의 사이즈만 기본적으로 차지를 한다.
-
-              // baseline은 글자를 정렬할 때, 글자의 밑부분을 정렬하는건데.. (알아서 사용 하시고)
-              // crossAxisAlignment: CrossAxisAlignment.center, // 기본값 인듯
-              crossAxisAlignment: CrossAxisAlignment.start, // 좍좍 늘림.. 헐! 50씩만 차지하라고 했는데 최대한으로 늘어남
-
-              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                // Expanded / Flexible -> 중요.. Row나 Column 위젯의 안, 'children'에만 사용될 수 있어요
-                Expanded( // 헐.. 남아있는 공간을, Expanded로 감싸져있는 애들이, 나눠서 먹었네요..
-                  child: Container(
-                    color: Colors.red,
-                    width: 50.0,
-                    height: 50.0,
-                  ),
-                ),
-                Expanded(
-                  flex: 2, // 나머지 공간을 나눠먹는 비율.. 얘는 2 만큼의 공간을 차지하겠군
-                  child: Container(
-                    color: Colors.orange,
-                    width: 50.0,
-                    height: 50.0,
-                  ),
-                ),
-                Flexible( // 일단은 이 비율만큼 공간을 차지 하되, 만약 child 안에 있는 위젯이 공간을 차지하지 않으면 -> 남는 공간은 버려 버림
-                  child: Container(
-                    color: Colors.yellow,
-                    width: 50.0,
-                    height: 50.0,
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Container(
+                      height: 50.0,
+                      width: 50.0,
+                      color: Colors.red,
+                    ),
+                    Container(
+                      height: 50.0,
+                      width: 50.0,
+                      color: Colors.orange,
+                    ),
+                    Container(
+                      height: 50.0,
+                      width: 50.0,
+                      color: Colors.yellow,
+                    ),
+                    Container(
+                      height: 50.0,
+                      width: 50.0,
+                      color: Colors.green,
+                    ),
+                  ],
                 ),
                 Container(
-                  color: Colors.green,
-                  width: 50.0,
                   height: 50.0,
+                  width: 50.0,
+                  color: Colors.orange,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Container(
+                      height: 50.0,
+                      width: 50.0,
+                      color: Colors.red,
+                    ),
+                    Container(
+                      height: 50.0,
+                      width: 50.0,
+                      color: Colors.orange,
+                    ),
+                    Container(
+                      height: 50.0,
+                      width: 50.0,
+                      color: Colors.yellow,
+                    ),
+                    Container(
+                      height: 50.0,
+                      width: 50.0,
+                      color: Colors.green,
+                    ),
+                  ],
+                ),
+                Container(
+                  height: 50.0,
+                  width: 50.0,
+                  color: Colors.green,
                 ),
               ],
             ),
